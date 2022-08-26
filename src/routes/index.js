@@ -8,6 +8,7 @@ const tanaman = require("./tanaman");
 const alat = require("./alat");
 const kebun = require("./kebun");
 const settanam = require("./tanam");
+const setcahaya = require("./cahaya");
 
 // let response;
 
@@ -28,4 +29,5 @@ router.use("/tanaman", tanaman);
 router.use("/alat", alat);
 router.use("/kebun", kebun);
 router.use("/tanam", settanam);
+router.use("/cahaya", setcahaya);
 module.exports = router;
