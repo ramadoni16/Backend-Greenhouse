@@ -18,6 +18,9 @@ const settanamSchema = new mongoose.Schema(
     MAC_ADDRESS: {
       type: String
     },
+    ID_USER: {
+      type: String
+    },
     SUHU_MINIMAL: {
       type: String
     },
