@@ -112,6 +112,18 @@ const getMacAddress = async (req, res) => {
   res.json(response);
 };
 
+const getByIdUser = async (req, res) => {
+  try {
+    const data = await service.getByIdUser({ ID_USER: req.params.id_user });
+    // console.log(data);
+    response = { ...requestResponse.success, data };
+  } catch (error) {
+    logger.error(error);
+    response = { ...requestResponse.server_error };
+  }
+  res.json(response);
+};
+
 module.exports = {
   create,
   get,
@@ -120,5 +132,6 @@ module.exports = {
   getByIdAlat,
   updateOne,
   deleteOne,
-  getMacAddress
+  getMacAddress,
+  getByIdUser
 };
