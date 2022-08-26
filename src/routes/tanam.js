@@ -49,4 +49,11 @@ router.get(
   controllers.getMacAddress
 );
 
+// GET BYIDUSER
+router.get(
+  "/getByIdUser/:id_user",
+  checkRequest(requiredRequest.authorization),
+  controllers.getByIdUser
+);
+
 module.exports = router;
