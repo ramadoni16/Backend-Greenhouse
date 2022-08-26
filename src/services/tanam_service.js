@@ -35,6 +35,17 @@ const getAllTanaman = async () => {
     },
     {
       $unwind: "$data_alat"
+    },
+    {
+      $lookup: {
+        from: "users",
+        localField: "ID_USER",
+        foreignField: "GUID",
+        as: "data_user"
+      }
+    },
+    {
+      $unwind: "$data_user"
     }
   ]);
   return data;
@@ -113,7 +124,49 @@ const deleteOne = async (condition) => {
 
 // GET MAC ADDRESS
 const getMacAddress = async (condition) => {
-  return model.find(condition, { _id: false }, { lean: true });
+  return model.findOne(condition, { _id: false }, { lean: true });
+};
+
+const getByIdUser = async (condition) => {
+  // return model.find(condition, { _id: false }, { lean: true });
+  return model.aggregate([
+    {
+      $match: condition
+    },
+    {
+      $lookup: {
+        from: "tanaman",
+        localField: "ID_TANAMAN",
+        foreignField: "GUID",
+        as: "data_tanaman"
+      }
+    },
+    {
+      $unwind: "$data_tanaman"
+    },
+    {
+      $lookup: {
+        from: "alat",
+        localField: "ID_ALAT",
+        foreignField: "GUID",
+        as: "data_alat"
+      }
+    },
+    {
+      $unwind: "$data_alat"
+    },
+    {
+      $lookup: {
+        from: "users",
+        localField: "ID_USER",
+        foreignField: "GUID",
+        as: "data_user"
+      }
+    },
+    {
+      $unwind: "$data_user"
+    }
+  ]);
 };
 
 module.exports = {
@@ -125,6 +178,7 @@ module.exports = {
   updateOne,
   deleteOne,
   getMacAddress,
-  getAllTanaman
+  getAllTanaman,
+  getByIdUser
   // getAllAlat
 };
