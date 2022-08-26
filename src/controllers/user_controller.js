@@ -67,22 +67,22 @@ const getByIdUser = async (req, res) => {
 //   res.json(response);
 // };
 
-// const deleteOne = async (req, res) => {
-//   try {
-//     const data = await user_service.deleteOne({ GUID: req.params.guid });
-//     response = { ...requestResponse.success, data };
-//   } catch (error) {
-//     logger.error(error);
-//     response = { ...requestResponse.server_error };
-//   }
-//   res.json(response);
-// };
+const deleteOne = async (req, res) => {
+  try {
+    const data = await user_service.deleteOne({ GUID: req.params.guid });
+    response = { ...requestResponse.success, data };
+  } catch (error) {
+    logger.error(error);
+    response = { ...requestResponse.server_error };
+  }
+  res.json(response);
+};
 
 module.exports = {
   registrasi,
   getRoleUser,
   getRoleUserAdmin,
-  getByIdUser
+  getByIdUser,
   // updateOne,
-  // deleteOne
+  deleteOne
 };
