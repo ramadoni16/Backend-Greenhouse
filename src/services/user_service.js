@@ -52,16 +52,16 @@ const getByIdUser = async (condition) => {
 //   // return model.findOne(condition, { _id: false }, { lean: true });
 // };
 
-// const deleteOne = async (condition) => {
-//   return user_model.deleteOne(condition);
-//   // return model.findOne(condition, { _id: false }, { lean: true });
-// };
+const deleteOne = async (condition) => {
+  return user_model.deleteOne(condition);
+  // return model.findOne(condition, { _id: false }, { lean: true });
+};
 
 module.exports = {
   registrasi,
   get,
   getRoleUserAdmin,
-  getByIdUser
+  getByIdUser,
   // updateOne,
-  // deleteOne
+  deleteOne
 };
