@@ -87,7 +87,7 @@ const login = async ({ EMAIL, PASSWORD }) => {
       expiresIn: "7d"
     }
   );
-  // console.log(admin.INSTITUSI_CODE)
+  // console.log()
 
   const result = {
     ...requestResponse.success,
