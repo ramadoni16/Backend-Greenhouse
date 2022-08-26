@@ -29,15 +29,15 @@ router.get(
 );
 
 // router.put(
-//   "/edit/:guid",
-//   checkRequest(requiredRequest.authorization),
+//   "/:guid",
+//   // checkRequest(requiredRequest.authorization),
 //   controllers.updateOne
 // );
 
-// router.delete(
-//   "/delete/:guid",
-//   checkRequest(requiredRequest.authorization),
-//   controllers.deleteOne
-// );
+router.delete(
+  "/:guid",
+  // checkRequest(requiredRequest.authorization),
+  controllers.deleteOne
+);
 
 module.exports = router;
