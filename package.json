@@ -1,13 +1,13 @@
 {
-  "name": "super-admin-api",
+  "name": "greenhouse-ubl",
   "version": "1.0.0",
-  "description": "",
+  "description": "api-gh",
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "qwerty",
+  "author": "Ramadoni",
   "license": "ISC",
   "dependencies": {
     "@pptik/galileo": "^0.1.3",
