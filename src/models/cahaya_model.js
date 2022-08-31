@@ -22,10 +22,10 @@ const cahayaSchema = new mongoose.Schema(
       type: String
     },
     TGL_GANTI_WARNA: {
-      type: String
+      type: Date
     },
     TGL_PANEN: {
-      type: String
+      type: Date
     },
     CREATED_AT: {
       type: Date,
