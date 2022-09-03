@@ -56,7 +56,9 @@ const getById = async (req, res) => {
 
 const getByIdTanaman = async (req, res) => {
   try {
-    const data = await service.getByIdTanaman({ ID_TANAMAN: req.params.id_tanaman });
+    const data = await service.getByIdTanaman({
+      ID_TANAMAN: req.params.id_tanaman
+    });
     response = { ...requestResponse.success, data };
   } catch (error) {
     logger.error(error);
@@ -103,7 +105,16 @@ const deleteOne = async (req, res) => {
 
 const getMacAddress = async (req, res) => {
   try {
-    const data = await service.getMacAddress({ MAC_ADDRESS: req.params.mac_address });
+    const datas = await service.getMacAddress({
+      MAC_ADDRESS: req.params.mac_address
+    });
+    let tgl1 = new Date(datas.TGL_GANTI_WARNA);
+    let tgl2 = new Date(datas.TGL_PANEN);
+    let data = {
+      ...datas,
+      TGL_GANTI_WARNA: tgl1.getFullYear() + tgl1.getMonth() + tgl1.getDate(),
+      TGL_PANEN: tgl2.getFullYear() + tgl2.getMonth() + tgl2.getDate()
+    };
     response = { ...requestResponse.success, data };
   } catch (error) {
     logger.error(error);
