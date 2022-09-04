@@ -11,9 +11,6 @@ const alatSchema = new mongoose.Schema(
     MAC_ADDRESS: {
       type: String
     },
-    NAMA_ALAT: {
-      type: String
-    },
     DATA_SENSOR: {
       type: String
     },
