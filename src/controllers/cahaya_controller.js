@@ -108,11 +108,11 @@ const getMacAddress = async (req, res) => {
     const datas = await service.getMacAddress({
       MAC_ADDRESS: req.params.mac_address
     });
-    let tgl1 = new Date(datas.TGL_GANTI_WARNA);
+    // let tgl1 = new Date(datas.TGL_GANTI_WARNA);
     let tgl2 = new Date(datas.TGL_PANEN);
     let data = {
       ...datas,
-      TGL_GANTI_WARNA: tgl1.getFullYear() + tgl1.getMonth() + tgl1.getDate(),
+      // TGL_GANTI_WARNA: tgl1.getFullYear() + tgl1.getMonth() + tgl1.getDate(),
       TGL_PANEN: tgl2.getFullYear() + tgl2.getMonth() + tgl2.getDate()
     };
     response = { ...requestResponse.success, data };
