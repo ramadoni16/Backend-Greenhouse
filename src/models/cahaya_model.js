@@ -21,9 +21,9 @@ const cahayaSchema = new mongoose.Schema(
     ID_USER: {
       type: String
     },
-    // TGL_GANTI_WARNA: {
-    //   type: Date
-    // },
+    TGL_GANTI_WARNA: {
+      type: Date
+    },
     TGL_PANEN: {
       type: Date
     },
